@@ -20,15 +20,11 @@ $genres = $statement->fetchAll(PDO::FETCH_OBJ);
     <table class='table'>
         <tr>
             <th>Genre</th>
-            <th>Songs</th>
         </tr>
         <?php foreach($genres as $genre) : ?>
         <tr>
             <td>
-                <?php echo $genre->Name ?>
-            </td>
-            <td>
-                <a href='tracks.php?genre=<?php echo urlencode($genre->Name) ?>'>List of Songs</a>
+                <a href='tracks.php?genre=<?php echo urlencode($genre->Name) ?>'><?php echo $genre->Name ?></a>
             </td>
         </tr>
         <?php endforeach ?>
